@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import HomeIcon from '@material-ui/icons/Home';
+import { HomeButton } from './components/index';
+// import Main from './views/Main';
+// import Waiting from './views/Waiting';
+import Details from './views/Details';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Details />
+      <HomeButton variant="contained">
+        <HomeIcon fontSize="large" />
+      </HomeButton>
     </div>
   );
 }
