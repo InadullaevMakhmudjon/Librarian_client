@@ -23,6 +23,7 @@ module.exports = {
   ],
   rules: {
     "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
     "linebreak-style": 0,
   },
 };
