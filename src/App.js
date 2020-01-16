@@ -1,20 +1,12 @@
 import React from 'react';
-import HomeIcon from '@material-ui/icons/Home';
-import { HomeButton } from './components/index';
-// import Main from './views/Main';
-// import Waiting from './views/Waiting';
-import Details from './views/Details';
-import './App.css';
+import { Provider } from 'react-redux';
+import Router from './Router';
+import store from './redux/store';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Details />
-      <HomeButton variant="contained">
-        <HomeIcon fontSize="large" />
-      </HomeButton>
-    </div>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 }
-
-export default App;
