@@ -23,9 +23,9 @@ export const BtnCountainer = styled.div`
 `;
 
 export const Button = styled(MButton)`
-    width: 550px;
+    width: 520px;
     background: #03BCF1 !important;
-    height: 130px;
+    height: 100px;
     margin: 25px !important;
     display: flex !important;
     justify-content: center !important;
