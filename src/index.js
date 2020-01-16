@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './services/Socket';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

@@ -16,12 +16,6 @@ export const TextContainer = styled.div`
     justify-content: space-between;
 `;
 
-export const Image = styled.image`
-    height: 350px;
-    width: 300px;
-    border: 2px solid grey;
-`;
-
 export const BtnBorrow = styled(Button)`
     height: 80px;
     background-color: #03BCF1 !important;
