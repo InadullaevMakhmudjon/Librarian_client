@@ -13,7 +13,6 @@ const WaitingComponent = ({ setStudent }) => {
   const history = useHistory();
   useEffect(() => {
     let unmounted = false;
-
     EventEmitter.on('studentReceived', (student) => {
       if (!unmounted) {
         setStudent(student);

@@ -6,7 +6,6 @@ import {
   BtnCountainer,
   Button,
 } from '../components/main/controllers';
-
 // eslint-disable-next-line react/prop-types
 export default () => {
   const history = useHistory();
@@ -20,7 +19,7 @@ export default () => {
         <Button variant="contained" onClick={() => history.push('/waiting')}>
           <Text color="white">BORROW BOOK</Text>
         </Button>
-        <Button variant="contained">
+        <Button variant="contained" onClick={() => history.push('/waiting')}>
           <Text color="white">RETURN BOOK</Text>
         </Button>
       </BtnCountainer>
