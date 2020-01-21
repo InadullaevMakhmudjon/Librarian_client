@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Grid } from '@material-ui/core';
 import { EventEmitter } from '../events/Event';
+import Dialog from '../components/home/Dialog';
 import Book from '../components/home/Book';
 import Signal from '../assets/signal.png';
 import { addBook, deleteStudent } from '../redux/student/student.actions';
@@ -20,6 +21,7 @@ const Home = ({
   // eslint-disable-next-line react/prop-types
   student, books, insertBook, removeStudent,
 }) => {
+  const [open, setOpen] = useState(0);
   const history = useHistory();
   useEffect(() => {
     let unmounted = false;
@@ -46,6 +48,7 @@ const Home = ({
           left="100px"
           top="20px"
           width="200px"
+          background="white"
           height="220px"
           src={`${process.env.REACT_APP_SERVER_URL}${student.image}`}
         />
@@ -79,22 +82,28 @@ const Home = ({
               alt="signal"
               noBorder
             />
-            <Text size="24px" color="#949494">Ready for reaciving books</Text>
+            <Text size="24px" color="#949494">Ready for receiving books</Text>
           </Empty>
         )
       }
       </BookContainer>
-      <BtnDone onClick={() => { removeStudent(); history.push('/'); }}>
+      <BtnDone onClick={() => { setOpen(1); }}>
         <Text size="30px" color="white">DONE</Text>
       </BtnDone>
+      <Dialog name={`${student.secondName} ${student.name}`} quantity={books.length} open={open} close={() => { setOpen(0); removeStudent(); history.push('/'); }} />
     </Container>
   ) : <>No Student Found</>);
 };
 
 Home.propTypes = {
+  student: PropTypes.object,
   books: PropTypes.array.isRequired,
   insertBook: PropTypes.func.isRequired,
   removeStudent: PropTypes.func.isRequired,
+};
+
+Home.defaultProps = {
+  student: {},
 };
 
 const stateToProps = (state) => ({ student: state.students.student, books: state.students.books });
