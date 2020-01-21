@@ -64,9 +64,45 @@ export const Empty = styled.div`
     align-items: center;
 `;
 
+export const DialogContent = styled.div`
+    width: 200px;
+    height: 200px;
+    display: flex;
+    background: white;
+`;
+
 
 export const BtnRemove = styled(IconButton)`
     position: absolute !important;
     top: 10px !important;
     right: 10px !important;
+`;
+
+export const Text = styled.span`
+    ${({ bold }) => (bold ? 'font-weight: 800;' : '')}
+    ${({ title }) => (title ? 'color: green; font-size: 45px; font-weight: 1000; text-align: center;' : '')}
+`;
+
+export const TextRow = styled.span`
+    font-size: '25px';
+    margin: '10px 10px';
+    font-weight: '500';
+    color: 'grey';
+`;
+
+export const DetailsContainer = styled.div`
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
+export const DContentContainer = styled.div`
+    width: 500px;
+    height: 550px;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 `;
